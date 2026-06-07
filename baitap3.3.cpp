@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 int main() {
-    int n, a[100];
-    int tong = 0, dem = 0;
+    int n, a[100], x;
+    int timThay = 0;
 
     printf("Nhap n = ");
     scanf("%d", &n);
@@ -12,17 +12,20 @@ int main() {
         scanf("%d", &a[i]);
     }
 
+    printf("Nhap x = ");
+    scanf("%d", &x);
+
     for(int i = 0; i < n; i++) {
-        if(a[i] % 2 != 0) {
-            tong += a[i];
-            dem++;
+        if(a[i] == x) {
+            timThay = 1;
+            break;
         }
     }
 
-    if(dem > 0)
-        printf("Trung binh cong cac so le = %.2f", (float)tong / dem);
+    if(timThay)
+        printf("%d co trong mang.", x);
     else
-        printf("Khong co so le trong mang!");
+        printf("%d khong co trong mang.", x);
 
     return 0;
 }

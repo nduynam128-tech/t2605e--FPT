@@ -12,7 +12,7 @@ int main() {
         scanf("%d", &a[i]);
     }
 
-    for(int i = 0; i < n; i++) {
+    for(int i = 0; i < n; i += 2) {
         if(a[i] % 2 != 0) {
             tong += a[i];
             dem++;
@@ -20,9 +20,10 @@ int main() {
     }
 
     if(dem > 0)
-        printf("Trung binh cong cac so le = %.2f", (float)tong / dem);
+        printf("Trung binh cong cac so le o vi tri chan = %.2f",
+               (float)tong / dem);
     else
-        printf("Khong co so le trong mang!");
+        printf("Khong co so le o vi tri chan!");
 
     return 0;
 }
